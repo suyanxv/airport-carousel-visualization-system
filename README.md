@@ -1,6 +1,5 @@
-# BigARM-Data-Visualization
+# airport-carousel-visualization-system
 
-domain: http://bigarm-comp2.comp.polyu.edu.hk/
-user: Andy
-pw: 12345
+A visualization system for airport carousels. Front and back end. In progress for stack migration.
 
+Stay tuned.
