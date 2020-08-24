@@ -1,0 +1,18 @@
+html, body {
+    height:100%; 
+    width: 100%;
+    margin: 0 !important; 
+    padding: 0 !important;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+.noprint {
+	display:none;
+	height:auto;}
+
+
+table {
+    page-break-inside: avoid;}
+
+@page { size: A3 landscape; }

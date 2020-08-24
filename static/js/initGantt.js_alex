@@ -1,0 +1,356 @@
+var gantt = Gantt.getGanttInstance();
+var bj= {    "data": [
+    {"id": 1, "text": "Carousel 2", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 2, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 3, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 4, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 5, "text": "Carousel 3", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 6, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 7, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 8, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 9, "text": "Carousel 4", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 10, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 11, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 12, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 13, "text": "Carousel 5", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 14, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 15, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 16, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 17, "text": "Carousel 6", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 18, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 19, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 20, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 21, "text": "Carousel 7", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 22, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 23, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 24, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 25, "text": "Carousel 8", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 26, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 27, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 28, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 29, "text": "Carousel 9", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 30, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 31, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 32, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 33, "text": "Carousel 10", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 34, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 35, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 36, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 37, "text": "Carousel 11", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 38, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 39, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 40, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 41, "text": "Carousel 12", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 42, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 43, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 44, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 45, "text": "Carousel 13", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 46, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 47, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 48, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true}
+]
+};
+
+
+var bj2= {    "data": [
+    {"id": 1, "text": "Carousel 5", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 2, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 3, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 4, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 5, "text": "Carousel 6", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 6, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 7, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 8, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 9, "text": "Carousel 7", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 10, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 11, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 12, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 13, "text": "Carousel 8", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 14, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 15, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 16, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 17, "text": "Carousel 9", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 18, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 19, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 20, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 21, "text": "Carousel 10", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 22, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 23, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 24, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 25, "text": "Carousel 12", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 26, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 27, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 28, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 29, "text": "Carousel 13", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 30, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 31, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 32, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 33, "text": "Carousel 14", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 34, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 35, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 36, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 37, "text": "Carousel 15", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 38, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 39, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 40, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 41, "text": "Carousel 16", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 42, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 43, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 44, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 45, "text": "Carousel 17", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 46, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 47, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    {"id": 48, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true}
+]
+};
+
+//5 in a row
+// var bj= {    "data": [
+    // {"id": 1, "text": "Carousel 2", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 2, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 3, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 4, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 5, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 6, "text": "Carousel 3", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 7, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 8, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 9, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 10, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 11, "text": "Carousel 4", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 12, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 13, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 14, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 15, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 16, "text": "Carousel 5", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 17, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 18, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 19, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 20, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 21, "text": "Carousel 6", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 22, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 23, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 24, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 25, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 26, "text": "Carousel 7", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 27, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 28, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 29, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 30, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 31, "text": "Carousel 8", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 32, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 33, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 34, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 35, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 36, "text": "Carousel 9", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 37, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 38, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 39, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 40, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 41, "text": "Carousel 10", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 42, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 43, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 44, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 45, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 46, "text": "Carousel 11", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 47, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 48, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+	// {"id": 49, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 50, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 51, "text": "Carousel 12", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 52, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 53, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 54, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 55, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 56, "text": "Carousel 13", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 57, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 58, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 59, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 60, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+// ]
+// };
+
+// var bj2= {    "data": [
+    // {"id": 1, "text": "Carousel 5", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 2, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 3, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 4, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 5, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 6, "text": "Carousel 6", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 7, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 8, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 9, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 10, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 11, "text": "Carousel 7", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 12, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 13, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 14, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 15, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 16, "text": "Carousel 8", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 17, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 18, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 19, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 20, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 21, "text": "Carousel 9", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 22, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 23, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 24, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 25, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 26, "text": "Carousel 10", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 27, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 28, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 29, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 30, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 31, "text": "Carousel 12", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 32, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 33, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 34, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 35, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 36, "text": "Carousel 13", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 37, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 38, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 39, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 40, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 41, "text": "Carousel 14", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 42, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 43, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 44, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 45, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 46, "text": "Carousel 15", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 47, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 48, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+	// {"id": 49, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 50, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 51, "text": "Carousel 16", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 52, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 53, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 54, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 55, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 56, "text": "Carousel 17", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 57, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 58, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 59, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+    // {"id": 60, "text": "", "start_date": "", "type": "project", "render":"split", "parent": 0, "progress": 0, "open": false, "duration":1, "unscheduled":true},
+// ]
+// };
+
+var initBigARMGantt = function initBigARMGantt(){
+      
+    gantt.config.xml_date = "%d-%m-%Y %H:%i";
+	gantt.config.scale_unit = "day";
+	gantt.config.step = 1;
+	gantt.config.date_scale = "%j %F, %l";
+	gantt.config.min_column_width = 20;
+	gantt.config.duration_unit = "hour";
+	gantt.config.duration_step = 1; 
+    gantt.config.scale_height = 30;``
+    gantt.config.row_height = 18;
+    gantt.templates.task_text=function(start,end,task){
+        return "<p style='color:rgba(0,0,0,1);'>"+task.text+"</p> ";
+    };
+
+    // gantt.config.static_background = true;
+    gantt.config.autosize = "";
+    gantt.config.auto_types = true;
+    gantt.locale.labels.section_split = "Display";
+
+    gantt.config.subscales = [
+	//{unit: "day", step: 1, date: "%j %F, %l"},
+	{unit: "hour", step: 1,date: "%H:%i"}
+    ];
+    gantt.config.columns = [
+		{name: "text", label: "BigARM Initial Plan", align: "center",tree: false, width: 120},
+		// {name: "start_date", align: "center", width: 90},
+		// {name: "duration", align: "center", width: 60},
+		// {name: "add", width: 40}
+    ];
+    // disbable moving and double clicking tasks, but still show mini window
+    gantt.config.readonly = true;
+	gantt.config.auto_scheduling = true;
+	gantt.config.lightbox.project_sections = [
+		{name: "description", height: 70, map_to: "text", type: "textarea", focus: true},
+		{name: "split", type:"checkbox", map_to: "render", options:[
+			{key:"split", label:"Split Task"}
+		]},
+		{name: "time", type: "duration", readonly: true, map_to: "auto"}
+    ];
+    
+    gantt.templates.grid_row_class = function (start_date, end_date, item) {
+        var i = item.id;
+		if (i>0&&i<5||i>8&&i<13||i>16&&i<21||i>24&&i<29||i>32&&i<37||i>40&&i<45) return ;
+        else return "gantt_background";
+	};
+	gantt.templates.task_row_class = function (start_date, end_date, item) {
+        var i = item.id;
+		if (i>0&&i<5||i>8&&i<13||i>16&&i<21||i>24&&i<29||i>32&&i<37||i>40&&i<45) return ;
+        else return "gantt_background";
+    };
+	
+	// 5 in a row arrangement 
+	    // gantt.templates.grid_row_class = function (start_date, end_date, item) {
+        // var i = item.id;
+		// if (i>0&&i<6||i>10&&i<16||i>20&&i<26||i>30&&i<36||i>40&&i<46||i>50&&i<56) return ;
+        // else return "gantt_background";
+	// };
+	// gantt.templates.task_row_class = function (start_date, end_date, item) {
+        // var i = item.id;
+		// if (i>0&&i<6||i>10&&i<16||i>20&&i<26||i>30&&i<36||i>40&&i<46||i>50&&i<56) return ;
+        // else return "gantt_background";
+    // };
+
+    gantt.templates.task_class = function (start, end, task) {
+		// if (task.type == gantt.config.types.meeting) {
+			return "highlight_task";
+		// }
+		// return "";
+    };
+    
+    gantt.attachEvent("onTaskClick", function(id,e){
+        var task = gantt.getTask(id);
+        if(task.text!=null) {
+            updateBarChart(new Date(task.STA));
+        }
+            else 
+            $("#flightInfo").html("");
+        return true;
+    });
+
+    var mouse_on_grid = false;
+    gantt.templates.tooltip_text = function(start,end,task){
+        if(mouse_on_grid) return "Flight: "+task.text+"<br>Start time: " + 
+        task.STA+ 
+        "<br>Load: "+task.load+
+        "<br>Carousel: "+task.dyn_belt;
+        return "";
+        
+    };
+    gantt.attachEvent("onMouseMove", function (id, e){
+    if (e.clientX >= gantt.config.grid_width) mouse_on_grid = true;
+    else mouse_on_grid = false;
+    }); 
+
+
+    var date_to_str = gantt.date.date_to_str(gantt.config.task_date);
+    currentMarker = gantt.addMarker({ 
+        start_date: date,
+        css: "today", 
+        title:date_to_str(date)
+    });
+    var date2 = new Date(date);
+	gantt.init("gantt_get_plan",new Date(date2.setHours(date2.getHours()-2)), new Date(date2.setHours(date2.getHours()+28)));
+	if (date2 >= new Date("2019-06-20")) gantt.parse(bj2);
+	else gantt.parse(bj);
+};
+
+var updateMarker = function updateMarker(updateDate) {
+    var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    var today = gantt.getMarker(currentMarker);
+    if (is_safari){
+        var temp = new Date(updateDate);
+        temp.setHours(temp.getHours()-8);
+        today.start_date = temp;
+    }else{
+        today.start_date = new Date(updateDate);
+    }
+    today.title = "Current Time";
+    gantt.updateMarker(currentMarker);
+};

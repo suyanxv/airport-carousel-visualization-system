@@ -1,0 +1,73 @@
+var drawBarChart = function drawBarChart(){
+
+    var canvas = document.getElementById('myBarChart');
+    // var modalCanvas = document.getElementById('modalBarChart');
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 20;
+
+    var dataSecond = {
+        label: 'Total Load',
+        data: [],
+        backgroundColor: '#337ab7',
+        borderWidth: 2,
+        //yAxisID: "y-axis-second"
+      };
+
+      var chartOptions = {
+        responsive: false,
+	legend: {
+           display: false
+        },
+        scales: {
+          xAxes: [{
+          gridLines: {
+                display: false
+            },
+          ticks: {
+                display: true
+            },
+	  scaleLabel: {
+                display: true,
+                labelString: "Carousel Number",
+                fontcolor:"black"
+
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+                display: true
+            },
+            ticks: {
+                display: true,
+		min:0,
+		max:800,
+		stepSize:200
+            },
+			scaleLabel: {
+                display: true,
+                labelString: "Carousel Loading",
+                fontcolor:"black"
+            }
+          }]
+        }
+	  };
+
+    var data3= {
+        labels: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+        datasets: [dataSecond]
+      };
+
+    barChart = new Chart(canvas, {
+        type: 'bar',
+        data: data3,
+        options: chartOptions
+    });
+
+    // modalBarChart = new Chart(modalCanvas, {
+    //     type: 'bar',
+    //     data: data3,
+    //     options: chartOptions
+    // });
+
+}

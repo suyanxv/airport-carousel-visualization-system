@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" />
+    <title>BigARM Development</title>
+
+    <script src="../static/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../static/css/bootstrap-datetimepicker.min.css">
+    <script src="../static/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link rel="stylesheet" href="../static/css/bootstrap-editable.css">
+    <script src="../static/js/moment.min.js"></script>
+    <script src="../static/js/bootstrap-editable.min.js"></script>
+    <link rel="stylesheet" href="../static/css/my_css.css">
+    <link rel="stylesheet" href="../static/css/print.css" type="text/css" media="print" />
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/gantt/codebase/dhtmlxgantt.js"></script>
+    <link href="../static/gantt/codebase/dhtmlxgantt.css" rel="stylesheet">
+    <script src="../static/node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../static/node_modules/chart.js/dist/Chart.js"></script>
+    <script src="../static/node_modules/mathjs/dist/math.js" type="text/javascript"></script>
+    <script src="../static/gantt/codebase/ext/dhtmlxgantt_marker.js"></script>
+    <script src="../static/gantt/codebase/ext/dhtmlxgantt_quick_info.js"></script>
+    <script src="../static/gantt/codebase/ext/dhtmlxgantt_tooltip.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="../static/node_modules/file-saver/dist/FileSaver.js" type="text/javascript"></script>
+    <script src="../static/node_modules/file-saver/src/FileSaver.js" type="text/javascript"></script>
+    <script src="../static/node_modules/file-saver/dist/FileSaver.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse ">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">BigARM-Carousel Allocation System COMP2</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div class="navbar-form navbar-right">
+                        <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search">-->
+                        <!--</div>-->
+                        <!-- id="bottomButtons" -->
+
+                        <div class="form-group">
+                            <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd"
+                                 data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                <input class="form-control" placeholder="Input the Date" size="16" type="text" value=""
+                                       readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <input type="hidden" id="dtp_input2" value="" /><br />
+                        </div>
+                        <button id="get_plan" class="btn btn-default">BigARM Plan</button>
+						<button id="show_all_flights" class="btn btn-default">Show All</button>
+						
+						<div class="dropdown">
+                            <button id="displayButton" onclick="auto_stop_next()" class="btn btn-default dropbtn">Show Steps</button>
+                            <div id="myDropdown3" class="dropdown-content">
+                                <a id="get_initial_bigarm_plan">AUTO</a>
+                                <a id="stop_auto">STOP</a>
+                                <a id="get_initial_bigarm_plan_next">NEXT</a>
+                            </div>
+                        </div>
+
+                        {%if admin_access %}
+                        <div class="dropdown">
+                            <button id="operations" onclick="operations()" class="btn btn-default dropbtn">Operations</button>
+                            <div id="myDropdown2" class="dropdown-content">
+                                <a id="change_carousel_status">Adjust Initial Plan</a>
+                                <a id="disable_carousel">Carousel Maintenance</a>
+                            </div>
+                        </div>
+                        <button id="upload" class="btn btn-default">Upload Current plan</button>
+                        {%endif%}
+
+                        <!-- <div class="dropdown"> -->
+                            <!-- <button onclick="exportresult()" class="btn btn-default dropbtn">Export Results</button> -->
+                            <!-- <div id="myDropdown" class="dropdown-content"> -->
+                                <!-- <a id="download_pdf">Download PDF</a> -->
+                                <!-- <a id="download_csv">Download CSV</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+
+                        <!--<button id="get_initial_bigarm_plan" class="btn btn-default">AUTO</button>
+                        <button id="stop_auto" class="btn btn-default">STOP</button>
+                        <button id="get_initial_bigarm_plan_next" class="btn btn-default"> NEXT</button>
+                        <button id="show_all_flights" class="btn btn-default">ALL</button> -->
+                        <button id="simulation" class="btn btn-default">Simulation</button>
+                        <button id="realtime" class="btn btn-default">Recommendation</button>
+
+						<div class="dropdown">
+                            <button onclick="exportresult()" class="btn btn-default dropbtn">Export Results</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a id="download_pdf">Download PDF</a>
+                                <a id="download_csv">Download CSV</a>
+                            </div>
+                        </div>
+                        <a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+                    </div>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <p style="float:right" id="notification"></p>
+        <!--<button id="download_pdf" class="btn btn-primary pull-left" style="margin-left:5px;">Download PDF</button>
+        <button id="download_csv" class="btn btn-primary pull-left" style="margin-left:5px;">Download CSV</button>
+        <button id="change_carousel_status" class="btn btn-primary pull-left" style="margin-left:5px;">Change Init Plan</button>
+        <p style="float:rightt" id="notification"><button id="disable_carousel" class="btn btn-primary pull-left" style="margin-left:300px;">
+ Carousel</button></p>-->
+
+    </header>
+
+    <div id="myModal_realtime" class="modal">
+        <div class="modal-content">
+            <div id="modal-header">
+                <span id="hide_realtime" onmouseover="hideWindow(this)" onmouseout="showWindow(this)">Hide</span>
+                <h2 id="update_sentence">Updates</h2>
+                <p>Current Time: <span id="current-time"></span></p>
+            </div>
+            <div style="display: inline-block;">
+                <input type="text" id="search_realtime" placeholder="Search for flight ID.." title="Type in a flight ID">
+                Time Range:
+                <input type="time" id="searchtime_from_realtime" value="00:00">
+                -
+                <input type="time" id="searchtime_to_realtime" value="23:59">
+                <button id="clearsearch_btn_realtime" class="btn btn-primary pull-right" style="line-height: 80%; margin-left: 10px;">Clear</button>
+                <button id="search_btn_realtime" class="btn btn-primary pull-right" style="line-height: 80%; margin-left: 10px;">Search</button>
+            </div>
+            <div class="modal-body">
+                <table class="table" id="table_realtime" filered=0>
+                    <thead>
+                        <tr>
+                            <th>Flight</th>
+                            <th>Date</th>
+                            <th>ETA</th>
+                            <th>STA</th>
+                            <th>Load</th>
+                            <th>Existing Carousel</th>
+                            <th>Recommendation</th>
+                            <th><div style="white-space: nowrap;display:inline">Change Carousel <input type="checkbox" onchange="changeAllCheckBox(this,'realtime1')" id="checkAll1"> <input type="checkbox" onchange="changeAllCheckBox(this,'realtime2')" id="checkAll2"></div></th>
+                        </tr>
+                    </thead>
+                    <tbody id="updateModalTable"></tbody>
+                    <br>
+                    <br>
+                    <tbody id="updateModalTable2"></tbody>
+                </table>
+                <span id="simulation_msg"></span>
+
+            </div>
+            <span style="color:#4286f4">BLUE LINE</span> is the standard deviation of changed carousel allocations<br>
+            <span style="color:green">GREEN LINE</span> is the standard deviation of recommended carousel allocations<br>
+            <span style="color:#686868">GREY LINE</span> is the standard deviation of existing carousel allocations<br>
+            <canvas id="myLineChart_min_realtime"></canvas>
+            <button id="confirm_update" class="btn btn-primary pull-right" style="right: 0; bottom: 0; margin:10px">Accept Change</button>
+            <button id="end_realtime" class="btn btn-primary pull-right" style="left: 0; bottom: 0; margin:10px">End Simulation</button>
+            <p id="count_down_text_2" style="left: 0; bottom: 0; margin:10px; display: none;">50 seconds left until this form will be submitted automatically.</p>
+        </div>
+    </div>
+
+    <div id="myModal_upload" class="modal-initplan">
+        <div class="modal-content">
+            <div id="modal-header">
+                <span id="close_upload">Close</span>
+                <h2>Upload Current Plan</h2>
+            </div>
+            <form id="plan_upload_form" method="POST" enctype="multipart/form-data">
+                <div class="Modal-body-upload">
+                    <input type="file" name="file" id="file" placeholder="Select init plan" class="custom-file-input">
+                    <br><br>
+                    <p id="upload_status"></p>
+                </div>
+                <button id="submit_upload" class="btn btn-primary pull-right" style="right: 0; bottom: 0; margin:10px">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="myModal_realtime_confirm" class="modal">
+        <div class="modal-content">
+            <div id="modal-header">
+                <h2>Confirm Update</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table" id="table_realtime_confirm">
+                    <col width="100">
+                    <col width="130">
+                    <col width="100">
+                    <thead>
+                        <tr>
+                            <th>Flight ID</th>
+                            <th>ETA/STA</th>
+                            <th>Load</th>
+                            <th>Previous Allocation</th>
+                            <th>BigARM Allocation</th>
+                            <th>Final Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody id="updateModalTable_confirm" align="left"></tbody>
+                </table>
+                <!-- table end -->
+            </div>
+            <button id="confirm_confirm_update" class="btn btn-primary pull-right" style="right: 0; bottom: 0; margin:10px">OK</button>
+            <button id="cancel_update" class="btn btn-primary pull-right" style="left: 0; bottom: 0; margin:10px">Cancel</button>
+        </div>
+    </div>
+
+    <div id="myModal_disablecarousel" class="modal-initplan">
+        <div class="modal-content">
+            <div id="modal-header">
+                <span id="close_disable_carousel">Close</span>
+                <h3>Carousel Maintenance</h3>
+            </div>
+            <div class="modal-body-initplan">
+		<button id="addDisableField" type="button" >Add Belts</button>
+        <form name="disablecarousel" method="POST"> 
+		<table class="table" style="border:1px;">
+                <thead>
+                    <tr>
+                        <th width="20px">Carousel Number</th>
+                        <th width="40px">Start Time</th>
+                        <th width="40px">End Time</th>
+                        <th width="20px">Remove</th>
+                        <th width="180px">Created Time</th>
+                    </tr>
+                </thead>
+                <tbody id="select_disable_carousel">
+                    <tr></tr>
+                </tbody>
+        </table>
+		</form>
+            </div>
+
+        <div id="myModal_viewmaintenance">
+            <h3>Scheculed Maintanence</h3>
+            <table class="table" style="border:1px;">
+                <thead>
+                    <tr>
+                        <th width="20px">Carousel Number</th>
+                        <th width="40px">Start Time</th>
+                        <th width="40px">End Time</th>
+                        <th width="20px">Remove</th>
+                        <th width="180px">Created Time</th>
+                    </tr>
+                </thead>
+                <tbody id="display_scheduled_maintanence">
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+        
+		<input id="confirm_disable_carousel" type="submit" value="Confirm and Update" class="btn btn-primary pull-right" style="right: 0; bottom: 0; margin:10px">
+
+        </div>
+    </div>
+
+    <div id="myModal_initplan" class="modal-initplan">
+        <div class="modal-content-initplan">
+            <div id="modal-header">
+		 <span id="close_initplan">Close</span>
+                <h2>Initial plan</h2>
+            </div>
+            <div style="display: inline-block;">
+                <input type="text" id="search_initplan" placeholder="Search for flight ID.." title="Type in a flight ID">
+                Time Range:
+                <input type="time" id="searchtime_from_initplan" value="00:00">
+                -
+                <input type="time" id="searchtime_to_initplan" value="23:59">
+                <button id="clearsearch_btn" class="btn btn-primary pull-right" style="line-height: 80%; margin-left: 10px;">Clear</button>
+                <button id="search_btn" class="btn btn-primary pull-right" style="line-height: 80%; margin-left: 10px;">Search</button>
+            </div>
+            <div class="modal-body-initplan">
+                <table class="table" id="table_initplan" filered=0>
+                    <thead>
+                        <tr>
+                            <th>Flight ID</th>
+                            <th>ETA/STA</th>
+                            <th>Load</th>
+                            <th>Initial Carousel</th>
+                            <th><div style="white-space: nowrap;display:inline">New Carousel <input type="checkbox" onchange="changeAllCheckBox(this,'initplan')" id="checkAll"></div></th>
+                        </tr>
+                    </thead>
+                    <tbody id="updateModalTable_initplan"></tbody>
+                </table>
+
+            </div>
+            <span style="color:green">GREEN LINE</span> is the standard deviation of initial plan, <span style="color:#4286f4">BLUE LINE</span> is the standard deviation of adjusted plan.
+            <canvas id="myLineChart_min_old"></canvas>
+            <button id="confirm_initplan" class="btn btn-primary pull-right" style="right: 0; bottom: 0; margin:10px">Accept Change</button>
+        </div>
+    </div>
+
+    <div id="myModal_simulation_input" class="modal">
+        <div class="modal-content-input">
+            <div id="modal-header">
+                <h2>Simulation Settings</h2>
+            </div>
+            <div class="modal-body-input">
+                <div id="modal-body-information">
+                    <h3>Simulation Start Time</h3>
+                    <span id="simulation_start_time_date"></span> <input type="time" id="simulation-time-input" value="03:00"><br><br>
+                    <h3>Wait Time Interval</h3>
+                    <input type="text" id="time-interval" value="15" placeholder="Time interval.."> seconds
+                </div>
+            </div>
+            <button id="confirm_simulation_input" class="btn btn-primary pull-right" style="position: relative; right: 0; bottom: 0; margin:10px">OK</button>
+            <button id="close_simulation_input" class="btn btn-primary pull-right" style="position: relative; left: 0; bottom: 0; margin:10px">Close</button>
+        </div>
+    </div>
+
+    <div id="myModal_alert_4_minutes" class="modal">
+        <div class="modal-content-input">
+            <div id="modal-header">
+                <h2 id="count_down_text">50 seconds left for change!!!</h2>
+            </div>
+            <button id="close_realtime_alert" class="btn btn-primary pull-right" style="position: relative; right: 0; bottom: 0; margin:10px">Close</button>
+        </div>
+    </div>
+
+    <main id="main_body" role="main" class="container"></main>
+    <div>
+    </div>
+
+    <div class="noprint" style="margin:auto;">
+        <canvas id="myLineChart"></canvas>
+        <font size="2">
+            <table cellspacing="0" cellpadding="0" style="table-layout: fixed; width:1000px;border: none;float: right;">
+                <tr>
+                    <td>00:00</td>
+                    <td>01:00</td>
+                    <td>02:00</td>
+                    <td>03:00</td>
+                    <td>04:00</td>
+                    <td>05:00</td>
+                    <td>06:00</td>
+                    <td>07:00</td>
+                    <td>08:00</td>
+                    <td>09:00</td>
+                    <td>10:00</td>
+                    <td>11:00</td>
+                    <td>12:00</td>
+                    <td>13:00</td>
+                    <td>14:00</td>
+                    <td>15:00</td>
+                    <td>16:00</td>
+                    <td>17:00</td>
+                    <td>18:00</td>
+                    <td>19:00</td>
+                    <td>20:00</td>
+                    <td>21:00</td>
+                    <td>22:00</td>
+                    <td>23:00</td>
+                </tr>
+            </table>
+        </font>
+        <canvas id="myBarChart"></canvas>
+    </div>
+
+    
+    <div>
+        <div id="rec-dummy"></div>
+        <div id="rec-left"></div>
+        <div id="rec-right"></div>
+        <div id="gantt_get_plan"></div>
+    </div>
+    
+
+
+
+    <!-- <div class="noprint" style="margin-bottom:0px;">
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Developed by PolyU</span>
+            </div>
+        </footer>
+    </div> -->
+
+    <script src="../static/js/button_customization.js"></script>
+    <script src="../static/js/initGantt.js"></script>
+    <script src="../static/js/initLine.js"></script>
+    <script src="../static/js/initBar.js"></script>
+    <script src="../static/js/dataVisualization.js"></script>
+    <script src="../static/js/mapSTD.js"></script>
+    <script src="../static/js/myvue.js"></script>
+    <script src="../static/js/simulation.js"></script>
+    <script src="../static/js/realtime.js"></script>
+    <script src="../static/js/initPlan.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1>PolyU BigARM Development Server </h1>
+            <form method="post" action="{{ url_for('login') }}">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="pass" placeholder="Password">
+                </div>
+                <!-- <button id="userlogin" type="submit" class="btn btn-primary btn-block">Log In</button> -->
+                <input id="userlogin" type="submit" value="Log In" class="btn btn-primary btn-block">
+                
+            </form>
+            
+            <br>
+                By PolyU Last update @ 07-11-2019
+            </div>
+        </div>
+    </div>
+	<div>
+        {% with messages = get_flashed_messages() %}
+            {%if messages%}
+                {%for message in messages%}
+                    <center><h3>{{ message }}</h3></center>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+	</div>
+</div>
+{% endblock %}

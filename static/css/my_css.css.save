@@ -1,0 +1,353 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  
+}
+
+/* #gantt_init_plan {
+  background-image: url("https://previews.123rf.com/images/in8finity/in8finity1702/in8finity170200042/72369443-l%C3%ADnea-de-banda-transportadora-en-fondo-blanco-vector.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.gantt-fullscreen {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  font-size: 32px;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  text-align: center;
+  -webkit-transition: background-color 0.5s, opacity 0.5s;
+  transition: background-color 0.5s, opacity 0.5s;
+}
+
+.gantt-fullscreen:hover {
+  background: rgba(150, 150, 150, 0.5);
+  opacity: 1;
+}
+
+.red .gantt_cell, .odd.red .gantt_cell,
+.red .gantt_task_cell, .odd.red .gantt_task_cell {
+  background-color: #FDE0E0;
+}
+
+.green .gantt_cell, .odd.green .gantt_cell,
+.green .gantt_task_cell, .odd.green .gantt_task_cell {
+  background-color: #BEE4BE;
+}
+
+.gantt_background {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+.gantt_background .gantt_task_cell {
+  border-right-color:rgba(0, 0, 0, 0.07) !important;
+}
+
+#myLineChart{
+  float: right;
+  width: calc(90.8vw - 120px) !important;
+  height:200px !important;
+  margin-right: 3.4vw;
+  }
+
+#myBarChart{
+    float: right;
+   /*    height:300px !important; width: 1000px !important; 
+    height:300px !important;*/
+    margin-right: 3.4vw;
+    }
+
+#barchartsize{
+    width: 1000px !important;
+    height:300px !important;	}
+
+#myLineChart_min_old,#myLineChart_min_realtime{
+    float: right;
+    width:100% !important;
+    height:200px !important;
+    /* margin-right: 3.4vw; */
+    }
+#modalBarChart{
+  float: right;
+  width: 60vw !important;
+  height:120px !important;
+
+}
+
+/* suyan */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* scroll bar */
+  /* display: block !important; */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 700px; /* Could be more or less, depending on screen size */
+  overflow: auto;
+  /* scroll bar */
+  overflow-y: initial !important
+}
+
+/* Modal Content/Box */
+.modal-content-input {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px; /* Could be more or less, depending on screen size */
+  overflow: auto;
+  /* scroll bar */
+  overflow-y: initial !important
+}
+
+.modal-body {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.modal-body-input {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.flexcontainer {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: left;
+}
+
+#select-carousel{
+  float: right;
+  /* padding-bottom: 80px; */
+}
+
+#linechart-carousel{
+  float: left;
+}
+
+/* The Close Button */
+#close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  /* background-color: #5cb85c; */
+  /* color: white; */
+}
+
+/* Slider */
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  bottom: 5px;
+}
+
+#switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* init plan modal*/
+.modal-initplan {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* scroll bar */
+  /*display: block !important; */
+}
+
+/* Modal Content/Box */
+.modal-content-initplan {
+  /*display:none;*/
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  overflow: auto;
+  /* scroll bar */
+  overflow-y: initial !important;
+
+}
+
+.modal-body-initplan {
+  height: 300px;
+  overflow-y: auto;
+}
+
+/* The Close Button Style*/
+#hide_initplan, #hide_realtime, #close_disable_carousel, #close_initplan{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#hide_initplan:hover,
+#hide_initplan:focus,
+#hide_realtime:hover,
+#hide_realtime:focus
+ {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Close of Disable Carousel Function*/
+.dropbtn {
+  
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
